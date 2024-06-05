@@ -24,13 +24,18 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
 
-        <!-- Event snippet for page view conversion page -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16567032300"></script>
         <script>
-            gtag('event', 'conversion', {'send_to': 'AW-16567032300/orTGCNiYi7UZEOyz49s9'});
-        </script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        <!-- Event snippet for outbond click conversion page -->
+            gtag('config', 'AW-16567032300');
+        </script>
         <script>
+            // Event snippet for page view conversion page
+            gtag('event', 'conversion', {'send_to': 'AW-16567032300/orTGCNiYi7UZEOyz49s9'});
+            // Event snippet for outbond click conversion page
             gtag('event', 'conversion', {'send_to': 'AW-16567032300/aGrlCICai7UZEOyz49s9'});
         </script>
     </head>
