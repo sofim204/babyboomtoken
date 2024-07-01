@@ -2882,8 +2882,8 @@ label {
   top: 52px;
   transform: translateX(-50%);
   width: 140px;
-  height: 93%;
-  background-repeat: no-repeat;
+  height: 99%;
+  background-repeat: repeat-y;
 }
 .roadmap-item {
   display: flex;
