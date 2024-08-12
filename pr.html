@@ -28,9 +28,7 @@
     #pr-section {
       width: 100%;
       max-width: 1400px;
-      margin: 0 auto;
-      margin-top: 200px;
-      margin-bottom: 150px;
+      margin: 150px auto;
     }
 
     #pr-section .all-div {
@@ -105,24 +103,24 @@
 
     th {
       border: 1px solid rgba(10, 10, 10, 0.1);
-      padding: 10px;
-      font-size: 22px;
+      padding: 7px;
+      font-size: 20px;
     }
 
     td {
       border: 1px solid rgba(10, 10, 10, 0.1);
-      padding: 20px 20px;
+      padding: 10px;
       width: auto;
       text-align: center;
     }
 
     .table-responsivex {
+      width: 100%;
+      max-width: 1400px;
       -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
     }
 
     #prTable {
-      margin-top: 60px;
-      margin-left: 18px; 
       border-spacing: 0;
       width: 100%;
       border-collapse: collapse;
@@ -353,39 +351,11 @@
   <div style="background-color: #418C95; height: 50px;">
     <div id="tickercontainer">
       <div class="tickerwrapper">
-        <!-- <ul class='list'> -->
-          <!-- 
-          <li class='listitem'>
-            <span style="margin-left: 150px;">
-              <a style="color: #FFFFFF;" href="https://lowcapcrypto.com/introducing-babyboomtoken-a-revolutionary-sex-coin-for-pregnancy-and-parenting-rewards/" target="_blank">
-                * BabyBoomToken: A Revolutionary ‘Sex Coin’ for Pregnancy and Parenting Rewards &nbsp;&nbsp;&nbsp;
-              </a>
-            </span>
-          </li>
-          <li class='listitem'>
-            <span>
-              <a style="color: #FFFFFF;" href="https://kryptotrends.com/featured/12744/babyboomtoken-emphasizing-token-supply-and-price-stability-in-an-innovative-reward-system/" target="_blank">
-                * BabyBoomToken: Emphasizing Token Supply and Price Stability in an Innovative Reward System &nbsp;&nbsp;&nbsp; 
-              </a>
-            </span>
-          </li>
-          <li class='listitem'>
-            <span>
-              <a style="color: #FFFFFF;" href="https://thedaychronicle.com/featured/35657/babyboomtoken-a-revolutionary-reward-system-backed-by-an-excellent-team/" target="_blank">
-                * BabyBoomToken: A Revolutionary Reward System Backed by an excellent Team &nbsp;&nbsp;&nbsp;
-              </a>
-            </span>
-          </li>
-          <li class='listitem'>
-            <span>
-              <a style="color: #FFFFFF;" href="https://medium.com/@ellaquickofficial/babyboomtoken-the-hot-new-token-addressing-low-birth-rates-with-innovative-rewards-fe79dd6adc35" target="_blank">
-                * BabyBoomToken: The Hot New Token Addressing Low Birth Rates with Innovative Rewards &nbsp;&nbsp;&nbsp;
-              </a>
-            </span>
-          </li>
-          -->
-
           <div id="listitemdata"></div>
+          <div id="listitemdata"></div>
+
+        <!-- </ul> -->
+        <div id="listitemdata"></div>
 
         <!-- </ul> -->
       </div>
@@ -464,13 +434,13 @@
   <div class="main-shape" data-background="assets/img/images/main_shape.png"></div>
 
   <section id="pr-section">
-    <div style="width: 100%; height: 100%">
+    <div style="width: 100%; height: 100%; display: flex; justify-content: center; flex-direction: column; align-items:center;">
       <h2 class="page-title wow fadeInUp" data-wow-delay=".2s">Public Relations</h2>
       <div class="table-responsivex">
         <table id="prTable">
           <!-- <thead style="border-radius: 15px; background-color: #35747C;"> -->
           <thead style="border-radius: 15px; background-color: #CCCCCC; color: #000000;">
-            <tr id="header_table" style="font-size: 24px;">
+            <tr id="header_table">
               <th style="text-align: center; font-weight: 500;">No.</th>
               <th style="text-align: left; font-weight: 500;">Media Source</th>
               <th style="text-align: left; font-weight: 500;">Title</th>
@@ -482,19 +452,18 @@
           </tbody>
         </table>
       </div>
-      <div class="pagination-wrapper">
-        <div class="pagination-controls">
-          <span id="pageInfo"></span>
-          <div class="pagination-buttons">
-            <!-- <button id="prevPage" disabled>Previous</button> -->
-            <div id="pageButtons" class="page-buttons-container"></div>
-            <!-- <button id="nextPage">Next</button> -->
-          </div>
+    </div>
+    <div class="pagination-wrapper">
+      <div class="pagination-controls">
+        <span id="pageInfo"></span>
+        <div class="pagination-buttons">
+          <!-- <button id="prevPage" disabled>Previous</button> -->
+          <div id="pageButtons" class="page-buttons-container"></div>
+          <!-- <button id="nextPage">Next</button> -->
         </div>
-      </div> 
+      </div>
     </div>
   </section>
-
 </main>
 <!-- main-area-end -->
 
