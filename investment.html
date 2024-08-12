@@ -32,7 +32,7 @@
         max-width: 1400px; /* Limit the maximum width */
         height: 50px;
       }
-      
+
       .tickerwrapper {     
         position: relative;
         top: 10px;
@@ -238,7 +238,7 @@
         data.forEach(pr => {
           const li = document.createElement('li');
           li.className = 'listitem';
-          li.innerHTML = `<span ${pr.title == 'BabyBoomToken: A Revolutionary ‘Sex Coin’ for Pregnancy and Parenting Rewards' ? 'style="margin-left: 150px;' : ''}>
+          li.innerHTML = `<span ${pr.title === 'BabyBoomToken: A Revolutionary ‘Sex Coin’ for Pregnancy and Parenting Rewards' ? 'style="margin-left: 480px;"' : ''}>
             <a style="color: #FFFFFF;" href="${pr.url}" target="_blank">
               * ${pr.title} &nbsp;&nbsp;&nbsp;
             </a>
