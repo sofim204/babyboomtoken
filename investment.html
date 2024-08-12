@@ -23,6 +23,49 @@
     <link rel="stylesheet" href="assets/css/default.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+      #tickercontainer {
+        margin: 0 auto;
+        background-color: #213a3d;
+        width: 100%; /* Make it full width */
+        max-width: 1400px; /* Limit the maximum width */
+        height: 50px;
+      }
+      
+      .tickerwrapper {     
+        position: relative;
+        top: 10px;
+        color: #FFFFFF;
+        width: 98.5%;
+        margin-left: 10px;
+        height: 30px;
+        overflow: hidden;
+        cursor: pointer;
+        z-index: 10;
+      }
+      
+      ul.list {
+        position: relative; 
+        display: inline-block; 
+        /*display: flex; */
+        white-space: nowrap;
+        list-style: none;
+        padding:0;
+        margin:0;
+      }
+      
+      ul.list.cloned {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+      
+      ul.list li {
+        float: left;
+        padding-left: 20px;
+      }
+    </style>
   </head>
   <body>
     <!-- Preloader -->
@@ -45,7 +88,14 @@
 
     <!-- header-area -->
     <header>
-      <div id="sticky-header" class="menu-area transparent-header">
+      <div style="background-color: #418C95; height: 50px;">
+        <div id="tickercontainer">
+          <div class="tickerwrapper">
+            <div id="listitemdata"></div>
+          </div>
+        </div>
+      </div>
+      <div id="sticky-header" class="menu-area transparent-header" style="padding-top: 50px;">
         <div class="container custom-container">
           <div class="row">
             <div class="col-12">
@@ -62,6 +112,7 @@
                       <li><a href="/index.html#roadmap">Roadmap</a></li>
                       <!-- <li><a href="/assets/file/BabyBoomCoin_Whitepaper.pdf" target="_blank">White paper</a></li> -->
                       <li><a href="/assets/file/Whitepaper.pdf" target="_blank">White paper</a></li>
+                      <li><a href="/pr.html">PR</a></li>
                       <li><a href="/link.html">Links</a></li>
                       <li><a href="/investment.html">Investment</a></li>
                     </ul>
@@ -161,5 +212,67 @@
     <script src="assets/js/ajax-form.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+      const listitemdata = document.querySelector('#listitemdata');
+    
+      function fetchAndDisplayTopPost() {
+        fetch('./top_post.json')
+          .then(response => response.json())
+          .then(data => {
+            displayTopPost(data);
+          })
+          .catch(error => {
+            console.error('Error fetching top post data:', error);
+          });
+      }
+    
+      function displayTopPost(data) {
+        listitemdata.innerHTML = '';
+    
+        const ul = document.createElement('ul');
+        ul.className = "list";
+        ul.style.display = 'flex'; // Ensure items are displayed in a row
+        ul.style.whiteSpace = 'nowrap'; // Ensure items stay in one line
+    
+        data.forEach(pr => {
+          const li = document.createElement('li');
+          li.className = 'listitem';
+          li.innerHTML = `<span ${pr.title == 'BabyBoomToken: A Revolutionary ‘Sex Coin’ for Pregnancy and Parenting Rewards' ? 'style="margin-left: 150px;' : ''}>
+            <a style="color: #FFFFFF;" href="${pr.url}" target="_blank">
+              * ${pr.title} &nbsp;&nbsp;&nbsp;
+            </a>
+          </span>`;
+          ul.appendChild(li);
+        });
+    
+        // Append the original list to the container
+        listitemdata.appendChild(ul);
+    
+        // Clone the list for seamless scrolling
+        const clonedList = ul.cloneNode(true);
+        clonedList.classList.add('cloned');
+        listitemdata.appendChild(clonedList);
+    
+        // Set the width of the list to handle scrolling
+        const listWidth = ul.scrollWidth;
+        ul.style.width = `${listWidth}px`;
+        clonedList.style.width = `${listWidth}px`;
+    
+        // GSAP animation setup
+        const time = 35; // Duration for one loop
+        gsap.to([ul, clonedList], {
+          x: `-=${listWidth}`,
+          duration: time,
+          ease: "none",
+          repeat: -1,
+          modifiers: {
+            x: gsap.utils.unitize(x => parseFloat(x) % listWidth) // Ensures seamless scrolling
+          }
+        });
+      }
+    
+      fetchAndDisplayTopPost();
+    </script>
   </body>
 </html>
