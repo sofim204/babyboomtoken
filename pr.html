@@ -190,6 +190,17 @@
       background-color: #35747C;
     }
 
+    .blinking-text {
+      animation: blinker 1.5s linear infinite;
+      color: yellow;
+    }
+    
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+
     @media (max-width: 1450px) { 
       .table-responsivex {
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
@@ -532,9 +543,9 @@
       data.forEach(pr => {
         const li = document.createElement('li');
         li.className = 'listitem';
-        li.innerHTML = `<span ${pr.title === 'BabyBoomToken: A Revolutionary ‘Sex Coin’ for Pregnancy and Parenting Rewards' ? 'style="margin-left: 480px;"' : ''}>
+        li.innerHTML = `<span ${pr.title === 'The encouraging ‘‘Intimacy Coin’’ pregnancy and parenting, BabyBoomToken (BBT)' ? 'style="margin-left: 480px;"' : ''}>
           <a style="color: #FFFFFF;" href="${pr.url}" target="_blank">
-            [${pr.source}] &nbsp; ${pr.title} &nbsp;&nbsp;&nbsp;
+            [${pr.source}] &nbsp; <span ${pr.title === 'The encouraging ‘‘Intimacy Coin’’ pregnancy and parenting, BabyBoomToken (BBT)' ? 'class="blinking-text"' : ''}>${pr.title}</span> &nbsp;&nbsp;&nbsp;
           </a>
         </span>`;
         ul.appendChild(li);
@@ -694,7 +705,11 @@
         tr.innerHTML = `
           <td>${pr.no}</td>
           <td style='text-align: left;'>${pr.source}</td>
-          <td style='text-align: left;'><a class='pr-link' href='${pr.url}' target='_blank'>${pr.title}</a></td>
+          <td style='text-align: left;'>
+            <a class='pr-link' href='${pr.url}' target='_blank'>
+              <span ${pr.title === 'The encouraging ‘‘Intimacy Coin’’ pregnancy and parenting, BabyBoomToken (BBT)' ? 'style="color: red;"' : ''}>${pr.title}</span>
+            </a>
+          </td>
           <td style='text-align: left;'>${pr.date}</td>
         `;
         tbody.appendChild(tr);

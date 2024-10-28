@@ -65,6 +65,17 @@
       float: left;
       padding-left: 20px;
     }
+
+    .blinking-text {
+      animation: blinker 1s linear infinite;
+      color: yellow;
+    }
+    
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -436,9 +447,9 @@
     data.forEach(pr => {
       const li = document.createElement('li');
       li.className = 'listitem';
-      li.innerHTML = `<span ${pr.title === 'BabyBoomToken: A Revolutionary ‘Sex Coin’ for Pregnancy and Parenting Rewards' ? 'style="margin-left: 480px;"' : ''}>
+      li.innerHTML = `<span ${pr.title === 'The encouraging ‘‘Intimacy Coin’’ pregnancy and parenting, BabyBoomToken (BBT)' ? 'style="margin-left: 480px;"' : ''}>
         <a style="color: #FFFFFF;" href="${pr.url}" target="_blank">
-          [${pr.source}] &nbsp; ${pr.title} &nbsp;&nbsp;&nbsp;
+          [${pr.source}] &nbsp; <span ${pr.title === 'The encouraging ‘‘Intimacy Coin’’ pregnancy and parenting, BabyBoomToken (BBT)' ? 'class="blinking-text"' : ''}>${pr.title}</span> &nbsp;&nbsp;&nbsp;
         </a>
       </span>`;
       ul.appendChild(li);
