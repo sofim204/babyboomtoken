@@ -234,7 +234,7 @@
         <a href="https://www.coingecko.com/en/coins/babyboomtoken" target="_blank">
           <div class="d-flex all-div">
             <div class="thumb-img">
-              <img src="https://ugc.production.linktr.ee/a67d6433-072e-45e8-8167-4223d8f14f9e_channels4-profile.jpeg?io=true&size=thumbnail-stack-v1_0" alt="" filter="" loading="lazy" crossorigin="">
+              <img src="assets/img/icon/coingecko.png" alt="" filter="" loading="lazy" crossorigin="">
             </div>
             <div class="div-title"><span>BabyBoomToken | CoinGecko</span></div>
             <div></div>
@@ -246,7 +246,7 @@
         <a href="https://www.gate.io/trade/BBT_USDT" target="_blank">
           <div class="d-flex all-div">
             <div class="thumb-img">
-              <img src="https://ugc.production.linktr.ee/18382f88-bb00-4a76-ab14-d69a3aa31398_gate.io-logo.png?io=true&size=thumbnail-stack-v1_0" alt="" filter="" loading="lazy" crossorigin="">
+              <img src="assets/img/icon/gate-io.png" alt="" filter="" loading="lazy" crossorigin="">
             </div>
             <div class="div-title"><span>BBT Trading Page | Gate.io</span></div>
             <div></div>
@@ -258,7 +258,7 @@
         <a href="https://www.mexc.com/exchange/BBT_USDT" target="_blank">
           <div class="d-flex all-div">
             <div class="thumb-img">
-              <img src="https://ugc.production.linktr.ee/409720fa-5a69-422e-b2d5-24ecc8aefe0f_big-5d01c56daa36d1aa69d4a085212a688d.png?io=true&size=thumbnail-stack-v1_0" alt="" filter="" loading="lazy" crossorigin="">
+              <img src="assets/img/icon/mexc.png" alt="" filter="" loading="lazy" crossorigin="">
             </div>
             <div class="div-title"><span>BBT Trading Page | MEXC</span></div>
             <div></div>
@@ -540,10 +540,10 @@
     ul.style.display = 'flex'; // Ensure items are displayed in a row
     ul.style.whiteSpace = 'nowrap'; // Ensure items stay in one line
 
-    data.forEach(pr => {
+    data.forEach((pr, key) => {
       const li = document.createElement('li');
       li.className = 'listitem';
-      li.innerHTML = `<span ${pr.title === 'BabyBoomToken：用区块链激励机制应对全球出生率危机' ? 'style="margin-left: 480px;"' : ''}>
+      li.innerHTML = `<span ${key === 0 ? 'style="margin-left: 480px;"' : ''}>
         <a style="color: #FFFFFF;" href="${pr.url}" target="_blank">
           [${pr.source}] &nbsp; <span ${pr.title === 'The ‘‘Intimacy Coin’’ encouraging pregnancy and parenting, BabyBoomToken (BBT)' ? 'class="blinking-text"' : ''}>${pr.title}</span> &nbsp;&nbsp;&nbsp;
         </a>

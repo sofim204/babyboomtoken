@@ -1108,10 +1108,10 @@
               ul.style.display = 'flex'; // Ensure items are displayed in a row
               ul.style.whiteSpace = 'nowrap'; // Ensure items stay in one line
         
-              data.forEach(pr => {
+              data.forEach((pr, key) => {
                 const li = document.createElement('li');
                 li.className = 'listitem';
-                li.innerHTML = `<span ${pr.title === 'BabyBoomToken：用区块链激励机制应对全球出生率危机' ? 'style="margin-left: 480px;"' : ''}>
+                li.innerHTML = `<span ${key === 0 ? 'style="margin-left: 480px;"' : ''}>
                   <a style="color: #FFFFFF;" href="${pr.url}" target="_blank">
                     [${pr.source}] &nbsp; <span ${pr.title === 'The ‘‘Intimacy Coin’’ encouraging pregnancy and parenting, BabyBoomToken (BBT)' ? 'class="blinking-text"' : ''}>${pr.title}</span> &nbsp;&nbsp;&nbsp;
                   </a>
