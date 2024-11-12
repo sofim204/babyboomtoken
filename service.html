@@ -1,0 +1,658 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>BabyBoomToken (BBT)</title>
+        <meta name="description" content="Dex.AI - AI Writer & Tech Startup Landing Page Template">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+        <!-- Place favicon.ico in the root directory -->
+
+		<!-- CSS here -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/animate.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="assets/css/odometer.css">
+        <link rel="stylesheet" href="assets/css/slick.css">
+        <link rel="stylesheet" href="assets/css/select2.min.css">
+        <link rel="stylesheet" href="assets/css/animatedheadline.css">
+        <link rel="stylesheet" href="assets/css/aos.css">
+        <link rel="stylesheet" href="assets/css/default.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+
+        <style>
+            #tickercontainer {
+                margin: 0 auto;
+                background-color: #213a3d;
+                width: 100%; /* Make it full width */
+                max-width: 1400px; /* Limit the maximum width */
+                height: 50px;
+            }
+
+            .tickerwrapper {     
+                position: relative;
+                top: 10px;
+                color: #FFFFFF;
+                width: 98.5%;
+                margin-left: 10px;
+                height: 30px;
+                overflow: hidden;
+                cursor: pointer;
+                z-index: 10;
+            }
+            
+            ul.list {
+                position: relative; 
+                display: inline-block; 
+                /*display: flex; */
+                white-space: nowrap;
+                list-style: none;
+                padding:0;
+                margin:0;
+            }
+            
+            ul.list.cloned {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            
+            ul.list li {
+                float: left;
+                padding-left: 20px;
+            }
+
+            .blinking-text {
+                animation: blinker 1s linear infinite;
+                color: yellow;
+            }
+
+            @keyframes blinker {
+                50% {
+                    opacity: 0;
+                }
+            }
+
+            .babyboom {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: row;
+                gap: 50px;
+                margin-left: 250px;
+            }
+
+            .box-container {
+                padding: 10px;
+                border-radius: 25px;
+            }
+
+            .description-babyboom {
+                width: 100%;
+                max-width: 1100px;
+                margin-right: 50px;
+            }
+
+            .image-babyboom, .image-sellon, .image-clublink {
+                width: 100%;
+            }
+
+            .sellon {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: row;
+                gap: 50px;
+            }
+
+            .title-sellon {
+                padding-right: 20px;
+            }
+
+            #sellon-desktop {
+                display: flex;
+            }
+
+            #sellon-mobile {
+                display: none;
+            }
+
+            .description-sellon {
+                width: 100%;
+                max-width: 1100px;
+                margin-left: 250px;
+            }
+
+            .clublink {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: row;
+                gap: 50px;
+                margin-left: 250px;
+            }
+
+            .description-clublink {
+                width: 100%;
+                max-width: 1100px;
+                margin-right: 50px;
+            }
+
+            @media (max-width: 852px) {
+                /* babyboom */
+                .babyboom {
+                    flex-direction: column;
+                }
+
+                .title-babyboom {
+                    margin: 0 auto;
+                    text-align: center;
+                }
+
+                .image-babyboom {
+                    width: 80%;
+                }
+
+                .box-container {
+                    margin: 0 auto;
+                    text-align: center;
+                    width: 80%;
+                }
+
+                .description-babyboom {
+                    max-width: 50px;
+                    padding-right: 20px;
+                }
+
+                /* sellon */
+                .sellon {
+                    flex-direction: column;
+                }
+
+                .title-sellon {
+                    margin: 0 auto;
+                    text-align: center;
+                    padding-left: 30px;
+                }
+
+                .image-sellon {
+                    width: 80%;
+                }
+
+                .description-sellon {
+                    max-width: 50px;
+                    padding-right: 40px;
+                }
+
+                /* clublink */
+                .clublink {
+                    flex-direction: column;
+                }
+
+                .title-clublink {
+                    margin: 0 auto;
+                    text-align: center;
+                }
+
+                .image-clublink {
+                    width: 80%;
+                }
+
+                .description-clublink {
+                    max-width: 50px;
+                    padding-right: 20px;
+                }
+            }
+
+            @media (max-width: 1200px) {
+                .babyboom { 
+                    margin-left: 20px;
+                }
+
+                .description-babyboom {
+                    max-width: 700px;
+                }
+
+                .sellon { 
+                    margin-right: 20px;
+                }
+
+                .description-sellon {
+                    max-width: 700px;
+                }
+
+                .clublink { 
+                    margin-left: 20px;
+                }
+
+                .description-clublink {
+                    max-width: 700px;
+                }
+            }
+
+            @media (max-width: 1366px) {
+                .babyboom { 
+                    margin-left: 20px;
+                }
+
+                .description-babyboom {
+                    max-width: 750px;
+                }
+
+                .sellon { 
+                    margin-right: 20px;
+                }
+
+                .description-sellon {
+                    max-width: 750px;
+                }
+
+                .clublink { 
+                    margin-left: 20px;
+                }
+
+                .description-clublink {
+                    max-width: 750px;
+                }
+            }
+            
+            @media (max-width: 1508px) {
+                .babyboom { 
+                    margin-left: 20px;
+                }
+
+                .description-babyboom {
+                    max-width: 950px;
+                }
+
+                .sellon { 
+                    margin-right: 20px;
+                }
+
+                .description-sellon {
+                    max-width: 950px;
+                    margin-left: 40px;
+                }
+
+                .clublink { 
+                    margin-left: 20px;
+                }
+
+                .description-clublink {
+                    max-width: 950px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <!-- Preloader -->
+        <div id="preloader">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+        <!-- Preloader -->
+
+		<!-- Scroll-top -->
+        <button class="scroll-top scroll-to-target" data-target="html">
+            <i class="fas fa-angle-up"></i>
+        </button>
+        <!-- Scroll-top-end-->
+
+        <!-- header-area -->
+        <header>
+            <div style="background-color: #418C95; height: 50px;">
+                <div id="tickercontainer">
+                    <div class="tickerwrapper">
+                        <div id="listitemdata"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sticky-header" class="menu-area transparent-header" style="padding-top: 50px;">
+                <div class="container custom-container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                            <div class="menu-wrap">
+                                <nav class="menu-nav">
+                                    <div class="logo">
+                                        <a href="index.html"><img src="assets/img/logo/logobb.png" alt="Logo"></a>
+                                    </div>
+                                    <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                        <ul class="navigation">
+                                            <!-- <li><a href="/">Home</a></li> -->
+                                            <li><a href="/service.html">Service</a></li>
+                                            <li><a href="/roadmap.html">Roadmap</a></li>
+                                            <li><a href="/assets/file/Whitepaper.pdf" target="_blank">White paper</a></li>
+                                            <li><a href="/pr.html">PR</a></li>
+                                            <li><a href="/link.html">Links</a></li>
+                                            <li><a href="/investment.html">Investment</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="header-action d-none d-md-block">
+                                        <ul class="list-wrap" style="display: none;">
+                                            <li class="header-lang">
+                                                <div class="dropdown">
+                                                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <img src="assets/img/icon/united-states.jpg" alt="">EN
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <a class="dropdown-item" href="index.html"><img src="assets/img/icon/russia.jpg" alt="">RUS</a>
+                                                        <a class="dropdown-item" href="index.html"><img src="assets/img/icon/india.jpg" alt="">IND</a>
+                                                        <a class="dropdown-item" href="index.html"><img src="assets/img/icon/bangladesh.jpg" alt="">BAN</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="header-btn"><a href="login.html" class="btn">sign up</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+
+                            <!-- Mobile Menu  -->
+                            <div class="mobile-menu">
+                                <nav class="menu-box">
+                                    <div class="close-btn"><i class="fas fa-times"></i></div>
+                                    <div class="nav-logo">
+                                        <a href="/"><img src="assets/img/logo/logobb.png" alt="Logo"></a>
+                                    </div>
+                                    <div class="menu-outer">
+                                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="menu-backdrop"></div>
+                            <!-- End Mobile Menu -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header-area-end -->
+
+        <!-- main-area -->
+        <main class="main-content fix">
+            <div class="noise-bg" data-background="assets/img/bg/noise_bg.png"></div>
+            <div class="main-shape" data-background="assets/img/images/main_shape.png"></div>
+
+            <section style="margin-top: 90px; margin-bottom: 50px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title text-center" style="margin-top: 10px;">
+                                <h2 class="title title-animation">Our <span>Service</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="babyboom">
+                <div class="title-babyboom">
+                    <img src="assets/service/babyboom.png" class="image-babyboom" alt="">
+                    <div class="box-container" style="background-color: #085D67; margin-top: 40px;">
+                        <a href="https://bbt.babyboomtoken.com/redirect" style="display: flex; justify-content: flex-start; align-items: center; text-decoration: none;" type="button">
+                            <div style="display: flex;">
+                                <img src="assets/service/babyboom-icon.png" style="width: 100%; max-width: 70px; margin: auto 10px;" alt="icon" />
+                                <div style="display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; margin-left: 6px; font-size: 16px;">
+                                    <p style="color:rgba(255, 255, 255, 0.54); font-size: 20px; margin-top: 10px; line-height: 0.8;">Download</p>
+                                    <p style="font-weight: 900; font-size: 26px; color: #FFFFFF; line-height: 0.8;">Babyboom</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="description-babyboom">
+                    <h2 style="color: #FFFFFF;">BABYBOOM</h2>
+                    <h3 style="color:rgba(255,255,255, 0.6);">App for Encouraging Childbirth</h3>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">BabyBoom is an innovative platform designed for couples planning to conceive and successfully navigate the journey of pregnancy. This app rewards users with tokens for their intimate relations, and as the pregnancy progresses, it offers an escalating reward system. Furthermore, achieving childbirth unlocks even greater rewards.</p>
+                    
+                    <h4 style="color: #FFFFFF; margin: 30px 0;">Creative and innovative birth incentives</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">BabyBoom is an innovative fertility program addressing low birth rates in many countries. It guides couples through their journey from relationship to pregnancy and childbirth, rewarding them with "SPT" points that can be exchanged for BabyBoomTokens (BBT). As a companion for couples starting a family, BabyBoom ensures a pleasant and meaningful experience, making pregnancy and childbirth even more special.</p>
+
+                    <h3 style="margin: 40px 0;">Key Features:</h3>
+                    <h4>1. Pregnancy Incentive Rewards</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">BabyBoom actively encourages healthy pregnancy for both men and women.</p>
+                    <h4>2. Childbirth Event Rewards</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">BabyBoom actively encourages healthy pregnancy for both men and women. By introducing a Web3 reward system for relationship building and post-pregnancy participation, we offer users a unique experience.</p>
+                    <h4>3. Pregnancy Incentive Rewards</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">BabyBoom provides a special community for users growing together. Through various themed groups and events, users can share knowledge and communicate.</p>
+                </div>
+            </section>
+
+            <section id="sellon-desktop" class="sellon" style="margin-top: 120px;">
+                <div class="description-sellon">
+                    <h2 style="color: #FFFFFF;">SELLON</h2>
+                    <h3 style="color:rgba(255,255,255, 0.6);">Hyperlocal Community App</h3>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">SELLON offers features like region-based secondhand trading, local bulletin boards, clubs, and casual games, creating a hub for diverse activities within local communities. </p>
+
+                    <h3 style="margin: 40px 0;">Key Features:</h3>
+                    <h4>1. Community</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">SELLON's community feature lets users share content like text, videos, and images while connecting through comments and chat. It fosters interaction by enabling users to discuss interests, local events, and information, strengthening community ties.</p>
+                    <h4>2. Club</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">The Club feature allows users with common hobbies, interests, or affiliations to form small groups. Joining clubs aligned with their specific interests enables users to communicate and share information, enhancing diversity within the local community and encouraging collaboration.</p>
+                    <h4>3. Buy & Sell</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">SELLON's secondhand marketplace lets users buy, sell, or share items locally at little to no cost. By enabling direct in-person transactions, it addresses delivery and trust concerns while promoting secure and efficient exchanges, supporting the growth of the local economy.</p>
+                    <h4>4. Games</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">The social gaming feature offers fun and easy games like rock-paper-scissors, airplane shooting, and block matching. These games provide entertainment and a competitive edge through scores, boosting interaction and activity within the local community. Social gaming helps drive user engagement and community involvement.</p>
+                </div>
+                <div class="title-sellon">
+                    <img src="assets/service/sellon.png" class="image-sellon" alt="">
+                    <div class="box-container" style="background-color: #085D67; margin-top: 40px;">
+                        <a href="https://sellon.net/redirect" style="display: flex; justify-content: flex-start; align-items: center; text-decoration: none;" type="button">
+                            <div style="display: flex;">
+                                <img src="assets/service/sellon-icon.png" style="width: 100%; max-width: 70px; margin: auto 10px;" alt="icon" />
+                                <div style="display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; margin-left: 6px; font-size: 16px;">
+                                    <p style="color:rgba(255, 255, 255, 0.54); font-size: 20px; margin-top: 10px; line-height: 0.8;">Download</p>
+                                    <p style="font-weight: 900; font-size: 26px; color: #FFFFFF; line-height: 0.8;">Sellon</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sellon-mobile" class="sellon" style="margin-top: 120px;">
+                <div class="title-sellon">
+                    <img src="assets/service/sellon.png" class="image-sellon" alt="">
+                    <div class="box-container" style="background-color: #085D67; margin-top: 40px;">
+                        <a href="https://sellon.net/redirect" style="display: flex; justify-content: flex-start; align-items: center; text-decoration: none;" type="button">
+                            <div style="display: flex;">
+                                <img src="assets/service/sellon-icon.png" style="width: 100%; max-width: 70px; margin: auto 10px;" alt="icon" />
+                                <div style="display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; margin-left: 6px; font-size: 16px;">
+                                    <p style="color:rgba(255, 255, 255, 0.54); font-size: 20px; margin-top: 10px; line-height: 0.8;">Download</p>
+                                    <p style="font-weight: 900; font-size: 26px; color: #FFFFFF; line-height: 0.8;">Sellon</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="description-sellon">
+                    <h2 style="color: #FFFFFF;">SELLON</h2>
+                    <h3 style="color:rgba(255,255,255, 0.6);">Hyperlocal Community App</h3>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">SELLON offers features like region-based secondhand trading, local bulletin boards, clubs, and casual games, creating a hub for diverse activities within local communities. </p>
+
+                    <h3 style="margin: 40px 0;">Key Features:</h3>
+                    <h4>1. Community</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">SELLON's community feature lets users share content like text, videos, and images while connecting through comments and chat. It fosters interaction by enabling users to discuss interests, local events, and information, strengthening community ties.</p>
+                    <h4>2. Club</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">The Club feature allows users with common hobbies, interests, or affiliations to form small groups. Joining clubs aligned with their specific interests enables users to communicate and share information, enhancing diversity within the local community and encouraging collaboration.</p>
+                    <h4>3. Buy & Sell</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">SELLON's secondhand marketplace lets users buy, sell, or share items locally at little to no cost. By enabling direct in-person transactions, it addresses delivery and trust concerns while promoting secure and efficient exchanges, supporting the growth of the local economy.</p>
+                    <h4>4. Games</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">The social gaming feature offers fun and easy games like rock-paper-scissors, airplane shooting, and block matching. These games provide entertainment and a competitive edge through scores, boosting interaction and activity within the local community. Social gaming helps drive user engagement and community involvement.</p>
+                </div>
+            </section>
+
+            <section class="clublink" style="margin-top: 120px;">
+                <div class="title-clublink">
+                    <img src="assets/service/clublink.png" class="image-clublink" alt="">
+                    <div class="box-container" style="background-color: #085D67; margin-top: 40px;">
+                        <a href="https://clublink.club/redirect" style="display: flex; justify-content: flex-start; align-items: center; text-decoration: none;" type="button">
+                            <div style="display: flex;">
+                                <img src="assets/service/clublink-icon.png" style="width: 100%; max-width: 70px; margin: auto 10px;" alt="icon" />
+                                <div style="display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; margin-left: 6px; font-size: 16px;">
+                                    <p style="color:rgba(255, 255, 255, 0.54); font-size: 20px; margin-top: 10px; line-height: 0.8;">Download</p>
+                                    <p style="font-weight: 900; font-size: 26px; color: #FFFFFF; line-height: 0.8;">Clublink</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="description-clublink">
+                    <h2 style="color: #FFFFFF;">CLUBLINK</h2>
+                    <h3 style="color:rgba(255,255,255, 0.6);">Connect Through Shared Interests Globally</h3>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">ClubLink is an app that connects people through clubs and communities based on shared interests. Users can create or join clubs, participate in discussions, and attend events, helping to build connections and engage in meaningful activities. The app allows members to share ideas, collaborate, and form relationships with like-minded individuals, creating a vibrant and interactive community.</p>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">To motivate active participation, ClubLink rewards users with BabyBoomTokens (BBT) for creating clubs, posting content, or contributing valuable ideas. Users who consistently engage and contribute are rewarded with more tokens, fostering a dynamic environment and encouraging ongoing involvement. Whether for socializing, learning, or networking, ClubLink provides a platform for users to connect and grow within a thriving community.</p>
+
+                    <h3 style="margin: 40px 0;">Key Features:</h3>
+                    <h4>1. Club</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">ClubLink allows users to create or join clubs tailored to their interests, whether it's sports, hobbies, career development, or social causes. Clubs provide a space for members to share ideas, organize events, and collaborate on activities, making it easy to connect with people who share similar passions and goals. Clubs can be public or private, giving users full control over their community.</p>
+                    <h4>2. Play</h4>
+                    <p style="font-size: 20px; color: #FFFFFF; text-align: justify;">Play is a community feature where users can engage in discussions, share content, and participate in activities without being tied to a specific location or area. Unlike Sellon, Play focuses on building connections and interaction based on shared interests, rather than geographical proximity, creating a global space for dynamic social engagement.</p>
+                </div>
+            </section>
+
+            <div style="margin-bottom: 150px;"></div>
+
+        </main>
+        <!-- main-area-end -->
+
+        <!-- footer-area -->
+        <footer>
+            <div class="footer-area">
+                <div class="container">
+                    <div class="footer-bottom">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <div class="copyright-text">
+                                    <p>Copyright ©2023-2024 BabyBoomToken Sociedad De Responsabilidad Limitada. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer-area-end -->
+
+
+
+		<!-- JS here -->
+        <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/jquery.odometer.min.js"></script>
+        <script src="assets/js/jquery.appear.js"></script>
+        <script src="assets/js/gsap.js"></script>
+        <script src="assets/js/ScrollTrigger.js"></script>
+        <script src="assets/js/ScrollToPlugin.min.js"></script>
+        <script src="assets/js/SplitText.js"></script>
+        <script src="assets/js/gsap-animation.js"></script>
+        <script src="assets/js/select2.min.js"></script>
+        <script src="assets/js/slick.min.js"></script>
+        <script src="assets/js/animatedheadline.min.js"></script>
+        <script src="assets/js/aos.js"></script>
+        <script src="assets/js/ajax-form.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                function checkScreenSize() {
+                    var width = window.innerWidth;
+                    var sellonDesktop = document.getElementById('sellon-desktop');
+                    var sellonMobile = document.getElementById('sellon-mobile');
+                
+                    if (width < 853) {
+                        sellonDesktop.style.display = 'none';
+                        sellonMobile.style.display = 'flex';
+                    } else {
+                        sellonDesktop.style.display = 'flex';
+                        sellonMobile.style.display = 'none';
+                    }
+                }
+                
+                // Run on page load
+                window.addEventListener('load', checkScreenSize);
+                
+                // Run on window resize
+                window.addEventListener('resize', checkScreenSize);
+            })
+        </script>
+
+        <script>
+            const listitemdata = document.querySelector('#listitemdata');
+
+            function fetchAndDisplayTopPost() {
+              fetch('./top_post.json')
+                .then(response => response.json())
+                .then(data => {
+                  displayTopPost(data);
+                })
+                .catch(error => {
+                  console.error('Error fetching top post data:', error);
+                });
+            }
+        
+            function displayTopPost(data) {
+              listitemdata.innerHTML = '';
+        
+              const ul = document.createElement('ul');
+              ul.className = "list";
+              ul.style.display = 'flex'; // Ensure items are displayed in a row
+              ul.style.whiteSpace = 'nowrap'; // Ensure items stay in one line
+        
+              data.forEach((pr, key) => {
+                const li = document.createElement('li');
+                li.className = 'listitem';
+                li.innerHTML = `<span ${key === 0 ? 'style="margin-left: 480px;"' : ''}>
+                  <a style="color: #FFFFFF;" href="${pr.url}" target="_blank">
+                    [${pr.source}] &nbsp; <span ${pr.title === 'The ‘‘Intimacy Coin’’ encouraging pregnancy and parenting, BabyBoomToken (BBT)' ? 'class="blinking-text"' : ''}>${pr.title}</span> &nbsp;&nbsp;&nbsp;
+                  </a>
+                </span>`;
+                ul.appendChild(li);
+              });
+        
+              // Append the original list to the container
+              listitemdata.appendChild(ul);
+        
+              // Clone the list for seamless scrolling
+              const clonedList = ul.cloneNode(true);
+              clonedList.classList.add('cloned');
+              listitemdata.appendChild(clonedList);
+        
+              // Set the width of the list to handle scrolling
+              const listWidth = ul.scrollWidth;
+              ul.style.width = `${listWidth}px`;
+              clonedList.style.width = `${listWidth}px`;
+        
+              // GSAP animation setup
+              const time = 35; // Duration for one loop
+              gsap.to([ul, clonedList], {
+                x: `-=${listWidth}`,
+                duration: time,
+                ease: "none",
+                repeat: -1,
+                modifiers: {
+                  x: gsap.utils.unitize(x => parseFloat(x) % listWidth) // Ensures seamless scrolling
+                }
+              });
+            }
+          
+            fetchAndDisplayTopPost();
+        </script>
+    </body>
+</html>
