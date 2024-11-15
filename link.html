@@ -521,8 +521,10 @@
 <script>
   const listitemdata = document.querySelector('#listitemdata');
 
+  const version = new Date().getTime();
+
   function fetchAndDisplayTopPost() {
-    fetch('./top_post.json')
+    fetch(`./top_post.json?v=${version}`)
       .then(response => response.json())
       .then(data => {
         displayTopPost(data);
