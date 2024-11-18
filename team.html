@@ -76,6 +76,59 @@
                     opacity: 0;
                 }
             }
+
+            .teams {
+                margin-right: 25px;
+            }
+
+            .image-team {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 30px;
+            }
+
+            .team-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-left: 30px;
+                margin-bottom: 60px;
+            }
+
+            .title-team {
+                width: 100%;
+                max-width: 1100px;
+                color: #FFFFFF;
+                font-size: 32px;
+            }
+
+            .description-team {
+                width: 100%;
+                max-width: 1100px;
+                color: #FFFFFF;
+                text-align: justify;
+                font-size: 18px;
+            }
+
+            .text-white {
+                color: #FFFFFF;
+            }
+
+            @media (max-width: 520px) {
+                .image-team {
+                    max-width: 200px;
+                }
+
+                .title-team {
+                    font-size: 24px;
+                }
+
+                .description-team {
+                    font-size: 16px;
+                }
+            }
+
         </style>
     </head>
     <body>
@@ -164,7 +217,6 @@
                             </div>
                             <div class="menu-backdrop"></div>
                             <!-- End Mobile Menu -->
-
                         </div>
                     </div>
                 </div>
@@ -177,143 +229,54 @@
             <div class="noise-bg" data-background="assets/img/bg/noise_bg.png"></div>
             <div class="main-shape" data-background="assets/img/images/main_shape.png"></div>
 
-            <!-- roadmap-area -->
-            <section class="roadmap-area pt-140 pb-130" id="roadmap">
+            <section style="margin-top: 90px; margin-bottom: 50px;">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="section-title text-center mb-70" style="margin-top: 50px;">
-                                <h2 class="title title-animation">Service <span>RoadMap</span></h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-12 col-md-9">
-                            <div class="roadmap-timeline-wrap">
-                                <div class="roadmap-line" data-background="assets/img/app_image/Line.svg"></div>
-                                <!-- <svg class="roadmap-line" height="2400" width="140" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="0" y1="0" x2="0" y2="9000" style="stroke:red;stroke-width:2" />
-                                    Sorry, your browser does not support inline SVG.
-                                </svg> -->
-                                <ul class="list-wrap">
-                                    <li style="margin-bottom: 100px">
-                                        <div class="roadmap-item">
-                                            <div class="roadmap-img wow fadeInLeft" data-wow-delay=".2s">
-                                                <span class="number">01</span>
-                                            </div>
-                                            <div class="roadmap-content wow fadeInRight" data-wow-delay=".2s">
-                                                <h4 class="title">Planning Phase (2023 Q2)</h4>
-                                                <ul>
-                                                    <li>- Brainstorming, initial planning, market research,
-                                                        and competitive analysis.</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li style="margin-bottom: 100px">
-                                        <div class="roadmap-item">
-                                            <div class="roadmap-img wow fadeInRight" data-wow-delay=".2s">
-                                                <span class="number">02</span>
-                                            </div>
-                                            <div class="roadmap-content wow fadeInLeft" data-wow-delay=".2s">
-                                                <h4 class="title">dApp Development (2023 Q4)</h4>
-                                                <p>- Developing the Babybooom app and strengthening the SPT points system for BBT exchange.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li style="margin-bottom: 100px">
-                                        <div class="roadmap-item">
-                                            <div class="roadmap-img wow fadeInLeft" data-wow-delay=".2s">
-                                                <span class="number">03</span>
-                                            </div>
-                                            <div class="roadmap-content wow fadeInRight" data-wow-delay=".2s">
-                                                <h4 class="title">Official BBT Launch (2024 Q1)</h4>
-                                                <p>- BBT is officially issued and can be earned and exchanged for products in the dApps Sellon and Babyboom.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li style="margin-bottom: 100px">
-                                        <div class="roadmap-item">
-                                            <div class="roadmap-img wow fadeInRight" data-wow-delay=".2s">
-                                                <span class="number">04</span>
-                                            </div>
-                                            <div class="roadmap-content wow fadeInLeft" data-wow-delay=".2s">
-                                                <h4 class="title">Marketing Strategy and Social Media Outreach (2024 Q2)</h4>
-                                                <p>- Awareness of BBT is being raised among blockchain investors through PR news and KOL marketing, while followers are being gathered on social media channels such as Telegram, X, and Discord.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li style="margin-bottom: 100px">
-                                        <div class="roadmap-item">
-                                            <div class="roadmap-img wow fadeInLeft" data-wow-delay=".2s">
-                                                <span class="number">05</span>
-                                            </div>
-                                            <div class="roadmap-content wow fadeInRight" data-wow-delay=".2s">
-                                                <h4 class="title">Major Exchange Listings (2024 Q3)</h4>
-                                                <p>- List BabyBoomToken (BBT) on major CEXs including HTX, Bybit, OKX, Kucoin, Gate.io, and Bitget, as we believe we have met all listing conditions.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li style="margin-bottom: 200px">
-                                        <div class="roadmap-item">
-                                            <div class="roadmap-img wow fadeInRight" data-wow-delay=".2s">
-                                                <span class="number">06</span>
-                                            </div>
-                                            <div class="roadmap-content wow fadeInLeft" data-wow-delay=".2s">
-                                                <h4 class="title">Expanding Utility (2024 Q4)</h4>
-                                                <p>- Expand the utility of BabyBoomToken (BBT) by integrating it with more everyday services and retailers. <br /> 
-                                                    - Introduce additional rewards and incentives for community participation. <br />
-                                                    - Develop and launch Clublink, a dApp that connects people globally with shared hobbies and interests, where BBT will be rewarded for user activities.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li style="margin-bottom: 100px">
-                                        <div class="roadmap-item">
-                                            <div class="roadmap-img wow fadeInLeft" data-wow-delay=".2s">
-                                                <span class="number">07</span>
-                                            </div>
-                                            <div class="roadmap-content wow fadeInRight" data-wow-delay=".2s">
-                                                <h4 class="title">App Enhancement (2025 Q1)</h4>
-                                                <p>- Enhance the Babyboom app with new features, including advanced pregnancy and parenting tracking tools. <br /> 
-                                                    - Increase collaborations with healthcare providers and parenting organizations.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li style="margin-bottom: 100px">
-                                        <div class="roadmap-item">
-                                            <div class="roadmap-img wow fadeInRight" data-wow-delay=".2s">
-                                                <span class="number">08</span>
-                                            </div>
-                                            <div class="roadmap-content wow fadeInLeft" data-wow-delay=".2s">
-                                                <h4 class="title">Global Marketing Campaign (2025 Q2)</h4>
-                                                <p>- Launch a global marketing campaign to attract more users and grow our community further. <br /> 
-                                                    - Introduce localized content and support for different regions.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li style="margin-bottom: 100px">
-                                        <div class="roadmap-item">
-                                            <div class="roadmap-img wow fadeInLeft" data-wow-delay=".2s">
-                                                <span class="number">09</span>
-                                            </div>
-                                            <div class="roadmap-content wow fadeInRight" data-wow-delay=".2s">
-                                                <h4 class="title">Ongoing Development</h4>
-                                                <p>- Continuously improve user experience and engagement through regular updates and community feedback.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <div class="section-title text-center" style="margin-top: 10px;">
+                                <h2 class="title title-animation">Staff</h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- roadmap-area-end -->
 
-            <!-- tools-area-end -->
+            <section class="teams">
+                <div class="team-container">
+                    <img src="assets/team/bayu.png" class="image-team" alt="">
+                    <div>
+                        <h3 class="title-team">Bayu (Founder)</h3>
+                        <p class="description-team">Bayu Aji Badriansah is a seasoned professional with extensive experience in blockchain projects. Since 2023, he has been serving as a Board Advisor at Vogo Foundation, fostering a collaborative learning atmosphere. Additionally, as the Project Founder at BabyBoom Foundation, he leads innovative blockchain projects from concept to impactful execution. Under his leadership, BabyBoom Foundation is utilizing blockchain technology to address low birth rates by providing rewards for pregnancy and childbirth.</p>
+                    </div>
+                </div>
+
+                <div class="team-container">
+                    <img src="assets/team/jackie.png" class="image-team" alt="">
+                    <div>
+                        <h3 class="title-team">Jackie (CTO)</h3>
+                        <p class="description-team">From September 2018 to May 2021, Jackie developed a Smart Office System for Telkom Indonesia, focusing on smart office services using Java Spring Boot Framework and Oracle. Since June 2021, he has been managing the Sellon e-commerce service in Indonesia and Singapore, utilizing PHP, Flutter, and MySQL. From July to December 2022, Jackie developed SeloToken on the Klaytn network, establishing e-commerce service standards across Indonesia. Since March 2023, he has been a Project Manager for BabyboomToken on the BSC network, designing its concept and technical structure in the service.</p>
+                    </div>
+                </div>
+
+                <div class="team-container">
+                    <img src="assets/team/vicky.png" class="image-team" alt="">
+                    <div>
+                        <h3 class="title-team">Vicky (Senior Mobile Developer)</h3>
+                        <p class="description-team">Since 2018, Vicky has specialized in Flutter, Swift, and Kotlin, bringing extensive mobile development experience from Ittron (2018-2020) and Sellon (2020-now). He excels in building cross-platform applications with Flutter, creating native iOS apps with Swift, and developing robust Android apps with Kotlin. His focus on UI/UX design ensures intuitive interfaces that enhance user engagement. Ahmad prioritizes clean code practices, modular architecture, and rigorous testing to deliver high-quality, maintainable applications. His passion for innovation drives him to stay updated with industry trends and integrate cutting-edge technologies into his work, consistently exceeding stakeholder expectations.</p>
+                    </div>
+                </div>
+
+                <div class="team-container">
+                    <img src="assets/team/riyan.png" class="image-team" alt="">
+                    <div>
+                        <h3 class="title-team">Riyan (Blockchain Developer)</h3>
+                        <p class="description-team">Riyan is a passionate Blockchain and JavaScript Developer at SellOn. He excels in transforming ideas into innovative solutions by leveraging his expertise in Ethereum, Solidity, React.js, Node.js, Express, MongoDB, and PostgreSQL. As a blockchain enthusiast, he builds secure and scalable decentralized applications and smart contracts. With a strong foundation in JavaScript, Riyan crafts seamless, interactive user experiences. In his current role, he develops and maintains robust backend solutions and integrates blockchain technologies to enhance platform functionality and security.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div style="margin-bottom: 150px;"></div>
+
         </main>
         <!-- main-area-end -->
 
@@ -363,7 +326,7 @@
             const version = new Date().getTime();
 
             function fetchAndDisplayTopPost() {
-                fetch(`./top_post.json?v=${version}`)
+              fetch(`./top_post.json?v=${version}`)
                 .then(response => response.json())
                 .then(data => {
                   displayTopPost(data);
