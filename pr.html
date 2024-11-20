@@ -201,6 +201,28 @@
       }
     }
 
+    .filter-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .button-filter {
+      padding: 8px 20px;
+      border-radius: 15px;
+      background-image: linear-gradient(to right, #4D8496, #4D8496); /* Solid color as a gradient */
+      border: 0;
+      color: #FFFFFF;
+      transition: background-image 0.2s ease-in;
+    }
+    
+    .button-filter-active {
+      background-image: linear-gradient(to right, #742A8E, #0ABAFF);
+    }
+
     @media (max-width: 1450px) { 
       .table-responsivex {
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
@@ -281,6 +303,10 @@
         font-size: 14px;
       }
 
+      .button-filter { 
+        padding: 7px 16px;
+      }
+
       .pagination-controls {
         flex-direction: column; /* Stack controls vertically on very small screens */
         justify-content: center;
@@ -359,16 +385,10 @@
 
 <!-- header-area -->
 <header>
-  <div style="background-color: #418C95; height: 50px;">
+  <div style="background-color: #418C95; height: 50px; overflow: hidden;">
     <div id="tickercontainer">
       <div class="tickerwrapper">
           <div id="listitemdata"></div>
-          <div id="listitemdata"></div>
-
-        <!-- </ul> -->
-        <div id="listitemdata"></div>
-
-        <!-- </ul> -->
       </div>
     </div>
   </div>
@@ -395,24 +415,6 @@
                   <li><a href="/team.html">Team</a></li>
                   <li><a href="/link.html">Links</a></li>
                   <li><a href="/investment.html">Investment</a></li>
-                </ul>
-              </div>
-              <div class="header-action d-none d-md-block">
-                <ul class="list-wrap" style="display: none;">
-                  <li class="header-lang">
-                    <div class="dropdown">
-                      <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                              aria-haspopup="true" aria-expanded="false">
-                        <img src="assets/img/icon/united-states.jpg" alt="">EN
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <a class="dropdown-item" href="index.html"><img src="assets/img/icon/russia.jpg" alt="">RUS</a>
-                        <a class="dropdown-item" href="index.html"><img src="assets/img/icon/india.jpg" alt="">IND</a>
-                        <a class="dropdown-item" href="index.html"><img src="assets/img/icon/bangladesh.jpg" alt="">BAN</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="header-btn"><a href="login.html" class="btn">sign up</a></li>
                 </ul>
               </div>
             </nav>
@@ -448,6 +450,11 @@
   <section id="pr-section">
     <div style="width: 100%; height: 100%; display: flex; justify-content: center; flex-direction: column; align-items:center;">
       <h2 class="page-title wow fadeInUp" data-wow-delay=".2s">Public Relations</h2>
+      <div class="filter-container">
+        <button class="button-filter" data-filter="all">All</button>
+        <button class="button-filter" data-filter="newspaper">Newspaper</button>
+        <button class="button-filter" data-filter="youtube">Youtube</button>
+      </div>
       <div class="table-responsivex">
         <table id="prTable">
           <!-- <thead style="border-radius: 15px; background-color: #35747C;"> -->
@@ -587,12 +594,15 @@
     const nextPageButton = document.getElementById('nextPage');
     const pageButtonsContainer = document.getElementById('pageButtons');
     const pageInfo = document.getElementById('pageInfo');
+    const filterButtons = document.querySelectorAll('.button-filter');
 
     const rowsPerPage = 10; // Number of rows per page
     //const maxPageButtons = 4; // Maximum number of page buttons to display
     let currentPage = 1;
     let totalRows = 0;
     let totalPages = 0;
+    let allData = []; // Store all data from pr.json
+    let filteredData = []; // Store data after applying filter
 
     function updatePageButtons() {
       pageButtonsContainer.innerHTML = '';
@@ -610,7 +620,8 @@
       prevButton.addEventListener('click', () => {
         if (currentPage > 1) {
           currentPage--;
-          fetchAndDisplayData();
+          //fetchAndDisplayData();
+          displayTable(filteredData);
         }
       });
       pageButtonsContainer.appendChild(prevButton);
@@ -643,7 +654,8 @@
         firstButton.className = 'page-button';
         firstButton.addEventListener('click', () => {
           currentPage = 1;
-          fetchAndDisplayData();
+          //fetchAndDisplayData();
+          displayTable(filteredData);
         });
         pageButtonsContainer.appendChild(firstButton);
     
@@ -661,7 +673,8 @@
         }
         button.addEventListener('click', () => {
           currentPage = i;
-          fetchAndDisplayData();
+          //fetchAndDisplayData();
+          displayTable(filteredData);
         });
         pageButtonsContainer.appendChild(button);
       }
@@ -677,7 +690,8 @@
         lastButton.className = 'page-button';
         lastButton.addEventListener('click', () => {
           currentPage = totalPages;
-          fetchAndDisplayData();
+          //fetchAndDisplayData();
+          displayTable(filteredData);
         });
         pageButtonsContainer.appendChild(lastButton);
       }
@@ -689,7 +703,8 @@
       nextButton.addEventListener('click', () => {
         if (currentPage < totalPages) {
           currentPage++;
-          fetchAndDisplayData();
+          //fetchAndDisplayData();
+          displayTable(filteredData);
         }
       });
       pageButtonsContainer.appendChild(nextButton);
@@ -729,9 +744,43 @@
       fetch(`./pr.json?v=${version}`)
         .then(response => response.json())
         .then(data => {
-          displayTable(data);
+          allData = data; // Store the entire dataset
+          applyFilter('all'); // Apply filter to display initial data
+          //displayTable(allData);
         });
     }
+
+    // Apply filter and display the filtered data
+    function applyFilter(filterType) {
+      // Update the active button
+      filterButtons.forEach(button => {
+        button.classList.toggle('button-filter-active', button.dataset.filter === filterType);
+      });
+
+      // Filter the data
+      if (filterType === 'all') {
+        filteredData = allData;
+      } else {
+        filteredData = allData.filter(item => item.type === filterType);
+      }
+
+      // Reorder the "no" field to start from 1
+      filteredData = filteredData.map((item, index) => ({
+        ...item,
+        no: index + 1, // Reset "no" to the new index starting from 1
+      }));
+
+      currentPage = 1; // Reset to the first page
+      displayTable(filteredData);
+    }
+
+    // Add event listeners to filter buttons
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filterType = button.dataset.filter;
+        applyFilter(filterType);
+      });
+    });
 
     // Initial fetch and display
     fetchAndDisplayData();
