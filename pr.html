@@ -373,7 +373,7 @@
     </div>
   </div>
 
-  <div id="sticky-header" class="menu-area transparent-header" style="padding-top: 30px;">
+  <div id="sticky-header" class="menu-area transparent-header" style="padding-top: 20px;">
     <br />
     <div class="container custom-container">
       <div class="row">
@@ -386,12 +386,13 @@
               </div>
               <div class="navbar-wrap main-menu d-none d-lg-flex">
                 <ul class="navigation">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/index.html#service">Service</a></li>
-                  <li><a href="/index.html#roadmap">Roadmap</a></li>
+                  <!-- <li><a href="/">Home</a></li> -->
+                  <li><a href="/service.html">Service</a></li>
+                  <li><a href="/roadmap.html">Roadmap</a></li>
                   <!-- <li><a href="/assets/file/BabyBoomCoin_Whitepaper.pdf" target="_blank">White paper</a></li> -->
-                  <li><a href="/assets/file/Whitepaper.pdf" target="_blank">White paper</a></li>
+                  <li><a href="/whitepaper.html">White paper</a></li>
                   <li><a href="/pr.html">PR</a></li>
+                  <li><a href="/team.html">Team</a></li>
                   <li><a href="/link.html">Links</a></li>
                   <li><a href="/investment.html">Investment</a></li>
                 </ul>
@@ -521,8 +522,10 @@
 
     const listitemdata = document.querySelector('#listitemdata');
 
+    const version = new Date().getTime();
+
     function fetchAndDisplayTopPost() {
-      fetch('./top_post.json')
+      fetch(`./top_post.json?v=${version}`)
         .then(response => response.json())
         .then(data => {
           displayTopPost(data);
@@ -723,7 +726,7 @@
     }
 
     function fetchAndDisplayData() {
-      fetch('./pr.json')
+      fetch(`./pr.json?v=${version}`)
         .then(response => response.json())
         .then(data => {
           displayTable(data);
