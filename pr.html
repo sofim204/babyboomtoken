@@ -526,7 +526,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-
+    console.log("a")
     const listitemdata = document.querySelector('#listitemdata');
 
     const version = new Date().getTime();
@@ -536,6 +536,7 @@
         .then(response => response.json())
         .then(data => {
           displayTopPost(data);
+          console.log("a")
         })
         .catch(error => {
           console.error('Error fetching top post data:', error);
@@ -721,7 +722,7 @@
       pageData.forEach(pr => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td>${pr.no}</td>
+          <td>${pr.id}</td>
           <td style='text-align: left;'>${pr.source}</td>
           <td style='text-align: left;'>
             <a class='pr-link' href='${pr.url}' target='_blank'>
@@ -740,6 +741,7 @@
       updatePageButtons();
     }
 
+    /* 
     function fetchAndDisplayData() {
       fetch(`./pr.json?v=${version}`)
         .then(response => response.json())
@@ -747,7 +749,46 @@
           allData = data; // Store the entire dataset
           applyFilter('all'); // Apply filter to display initial data
           //displayTable(allData);
+          console.log("a")
         });
+    } 
+    */
+
+    // show data from api, working
+    function fetchAndDisplayData() {
+      fetch('https://cms-idmaster.sellon.store/api_mobile/babyboomtoken_data/pr')
+      .then(response => {
+        if (!response.ok) {
+          //throw new Error('Network response was not ok');
+          console.log("network problem")
+        }
+        return response.json();
+      })
+      .then(data => {
+        allData = data.data; // Store the entire dataset
+        applyFilter('all'); // Apply filter to display initial data
+      })
+      .catch(error => {
+        //console.error('Error fetching from primary URL:', error);
+        console.log("network problem")
+        // Fallback to local JSON file
+        fetch('pr.json')
+          .then(response => {
+            if (!response.ok) {
+              //throw new Error('Network response was not ok');
+              console.log("network problem")
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log("json")
+            allData = data; // Store the entire dataset
+            applyFilter('all'); // Apply filter to display initial data
+          })
+          .catch(error => {
+            console.log("network problem")
+          });
+      });
     }
 
     // Apply filter and display the filtered data
@@ -764,10 +805,10 @@
         filteredData = allData.filter(item => item.type === filterType);
       }
 
-      // Reorder the "no" field to start from 1
+      // Reorder the "id" field to start from 1
       filteredData = filteredData.map((item, index) => ({
         ...item,
-        no: index + 1, // Reset "no" to the new index starting from 1
+        id: index + 1, // Reset "id" to the new index starting from 1
       }));
 
       currentPage = 1; // Reset to the first page
